@@ -2,6 +2,11 @@
 
 pincode component for react-native
 
+
+## Sample Video
+
+![react-natice-pincode](https://github.com/wjdghks963/react-native-pincode/assets/74060017/8d719ce6-b7c4-43b0-a83f-c226e36cb58b)
+
 ## Installation
 
 install react-native-reanimated and flow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/) to set babel plugin
