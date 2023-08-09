@@ -1,26 +1,98 @@
-# react-native-pin
+# react-native-pincode
 
 pincode component for react-native
 
 ## Installation
 
+install react-native-reanimated and flow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/) to set babel plugin
+
 ```sh
-npm install react-native-pin
+npm install react-native-pincode react-native-reanimated
 ```
 
 ## Usage
 
+Simple Usage
+
 ```js
-import { multiply } from 'react-native-pin';
+function App(): JSX.Element {
+  const isDarkMode = useColorScheme() === 'dark';
 
-// ...
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
 
-const result = await multiply(3, 7);
+  const pincode = ['1', '1', '1', '1', '1', '1'];
+
+  const [backGroundColor, setBackGroundColor] = useState<string>('');
+
+  return (
+    <SafeAreaView style={backgroundStyle}>
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        backgroundColor={backgroundStyle.backgroundColor}
+      />
+      <View style={{height: '100%'}}>
+        <PinCode
+          pinCount={pincode.length}
+          correctPin={pincode}
+          afterClear={() => setBackGroundColor('yellow')}
+          backgroundColor={backGroundColor}>
+          <PinCode.PinContent filledColor="red" emptyColor="" />
+          <PinCode.NumberPad
+            emptyIcon={<Text>⭐️</Text>}
+            deleteIcon={<Text>DEL</Text>}
+            shuffleIcon={<Text>Shuffle</Text>}
+            backgroundColor={'red'}
+          />
+        </PinCode>
+      </View>
+    </SafeAreaView>
+  );
+}
 ```
 
-## Contributing
+### Properties
 
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
+#### PinCode
+
+| PropertyName    | Type     | Description                                                    | Default  |
+|-----------------|----------|----------------------------------------------------------------|----------|
+| pinCount        | number   | Length of pin code                                             | required |
+| correctPin      | string[] | The value You've specified as an answer                        | required |
+| afterClear      | any      | Function that execute when correctPin and user's input is same | required |
+| backgroundColor | string?  | Main Container background color                                | ""       |
+
+<br/>
+
+#### PINContent
+
+| PropertyName | Type    | Description                      | Default |
+|--------------|---------|----------------------------------|---------|
+| title        | string? | Title that above pin circles     | null    |
+| filledColor  | string? | Circle Color when user input pin | red     |
+| emptyColor   | string? | Circle Color before input comes  | #fca5a5 |
+
+<br/>
+
+#### NumberPad
+
+| PropertyName    | Type             | Description                      | Default  |
+|-----------------|------------------|----------------------------------|----------|
+| emptyIcon       | React.ReactNode  | Title that above pin circles     | required |
+| deleteIcon      | React.ReactNode  | Circle Color when user input pin | required |
+| backgroundColor | string?          | Circle Color before input comes  | #dc2626  |
+| shuffle         | boolean?         | Circle Color before input comes  | null     |
+| shuffleIcon     | React.ReactNode? | Circle Color before input comes  | ''       |
+
+
+
+
+
+[//]: # (## Contributing)
+
+[//]: # ()
+[//]: # (See the [contributing guide]&#40;CONTRIBUTING.md&#41; to learn how to contribute to the repository and the development workflow.)
 
 ## License
 
