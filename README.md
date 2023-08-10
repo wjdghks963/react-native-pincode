@@ -1,6 +1,6 @@
 # react-native-pincode
 
-pincode component for react-native
+PIN-CODE component for react-native
 
 
 ## Sample Video
@@ -9,7 +9,7 @@ pincode component for react-native
 
 ## Installation
 
-install react-native-reanimated and flow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/) to set babel plugin
+install react-native-reanimated and follow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/) to set babel plugin
 
 ```sh
 npm install react-native-pincode react-native-reanimated
@@ -59,14 +59,21 @@ function App(): JSX.Element {
 
 ### Properties
 
+Property that receive React.ReactNode can be any component
+
+```
+<View/>, <Text/>, <Image/> ...
+```
+
+
 #### PinCode
 
-| PropertyName    | Type     | Description                                                    | Default  |
-|-----------------|----------|----------------------------------------------------------------|----------|
-| pinCount        | number   | Length of pin code                                             | required |
-| correctPin      | string[] | The value You've specified as an answer                        | required |
-| afterClear      | any      | Function that execute when correctPin and user's input is same | required |
-| backgroundColor | string?  | Main Container background color                                | ""       |
+| PropertyName    | Type     | Description                                                  | Default  |
+|-----------------|----------|--------------------------------------------------------------|----------|
+| pinCount        | number   | Length of pin code                                           | required |
+| correctPin      | string[] | The value You've specified as an answer                      | required |
+| afterClear      | any      | Function that execute when correctPin and User input is same | required |
+| backgroundColor | string?  | Main Container background color                              | ""       |
 
 <br/>
 
