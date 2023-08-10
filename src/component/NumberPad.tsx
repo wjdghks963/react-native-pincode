@@ -114,10 +114,10 @@ function NumberPad({
         </View>
       </View>
       <View style={style.numpadContainer}>
-        <Text style={style.funtcionText} onPress={shuffleArr}>
+        <Text style={style.functionText} onPress={shuffleArr}>
           {shuffleIcon ? shuffleIcon : ''}
         </Text>
-        <Text style={style.funtcionText} onPress={() => onPressDelete()}>
+        <Text style={style.functionText} onPress={() => onPressDelete()}>
           {deleteIcon}
         </Text>
       </View>
@@ -142,7 +142,7 @@ const style = StyleSheet.create({
     width: Dimensions.get('window').width / 4,
     alignItems: 'center',
   },
-  funtcionText: {
+  functionText: {
     width: Dimensions.get('window').width / 2,
     color: 'white',
     fontWeight: 'bold',

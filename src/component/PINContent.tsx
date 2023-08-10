@@ -74,7 +74,9 @@ export default function PINContent({
           <Text>{title}</Text>
         </View>
       ) : null}
-      <Animated.View style={[style.badgeContainer, customSpringStyles]}>
+      <Animated.View
+        style={[badgeContainer(password.length).container, customSpringStyles]}
+      >
         {password.map((item, index) => {
           return item === '-1' ? (
             <View
@@ -108,17 +110,23 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     gap: 15,
   },
-  badgeContainer: {
-    height: 25,
-    display: 'flex',
-    flexDirection: 'row',
-    gap: 20,
-  },
   badge: {
     flex: 0.08,
     borderRadius: 100,
   },
 });
+
+const badgeContainer = (passwordLength: number) =>
+  StyleSheet.create({
+    container: {
+      width: '100%',
+      height: 25,
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      gap: passwordLength < 7 ? 20 : 10,
+    },
+  });
 
 const badgeColor = (filledColor?: string, emptyColor?: string) =>
   StyleSheet.create({

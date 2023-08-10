@@ -24,7 +24,7 @@ const style = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     width: '100%',
-    height: 50,
+    paddingVertical: 15,
     display: 'flex',
     justifyContent: 'center',
     textAlignVertical: 'center',

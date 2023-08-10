@@ -5,14 +5,21 @@ PIN-CODE component for react-native
 
 ## Sample Video
 
+### AOS
+
 ![react-natice-pincode](https://github.com/wjdghks963/react-native-pincode/assets/74060017/8d719ce6-b7c4-43b0-a83f-c226e36cb58b)
+
+
+### IOS
+
+![iphon](https://github.com/wjdghks963/react-native-pincode/assets/74060017/741f2c8d-f82f-412d-8bcf-0b0f747ee426)
 
 ## Installation
 
-install react-native-reanimated and follow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/) to set babel plugin
+install react-native-reanimated and follow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#installation) to set babel plugin
 
 ```sh
-npm install react-native-pincode react-native-reanimated
+npm i @wjdghks963/react-native-shuffle-pincode react-native-reanimated
 ```
 
 ## Usage
