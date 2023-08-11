@@ -1,28 +1,29 @@
-# react-native-pincode
+# 🔑 react-native-pincode
 
-PIN-CODE component for react-native
+PIN CODE component for react-native
 
+If you have any suggestions or bugs, please don't hesitate to register an issue or PR. Thank you 🥳
 
-## Sample Video
+## 🎥 Sample Video
 
-### AOS
+### 🤖 AOS
 
 ![react-natice-pincode](https://github.com/wjdghks963/react-native-pincode/assets/74060017/8d719ce6-b7c4-43b0-a83f-c226e36cb58b)
 
 
-### IOS
+### 🍎 IOS
 
 ![iphon](https://github.com/wjdghks963/react-native-pincode/assets/74060017/741f2c8d-f82f-412d-8bcf-0b0f747ee426)
 
-## Installation
+## 📦 Installation
 
-install react-native-reanimated and follow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#installation) to set babel plugin
+install with react-native-reanimated and follow [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#installation) to set babel plugin
 
 ```sh
 npm i @wjdghks963/react-native-shuffle-pincode react-native-reanimated
 ```
 
-## Usage
+## ⚙️ Usage
 
 Simple Usage
 
@@ -64,10 +65,12 @@ function App(): JSX.Element {
 }
 ```
 
-### Properties
+### 🔧 Properties
 
-Property that receive React.ReactNode can be any component
+Properties that accept React.ReactNode can accommodate any type of component, whether they are native components from React Native's core or components from third-party libraries.
+This flexibility allows you to seamlessly integrate a wide range of UI elements and widgets into your PIN CODE screen.
 
+ex)
 ```
 <View/>, <Text/>, <Image/> ...
 ```
@@ -96,13 +99,12 @@ Property that receive React.ReactNode can be any component
 
 #### NumberPad
 
-| PropertyName    | Type             | Description                      | Default  |
-|-----------------|------------------|----------------------------------|----------|
-| emptyIcon       | React.ReactNode  | Title that above pin circles     | required |
-| deleteIcon      | React.ReactNode  | Circle Color when user input pin | required |
-| backgroundColor | string?          | Circle Color before input comes  | #dc2626  |
-| shuffle         | boolean?         | Circle Color before input comes  | null     |
-| shuffleIcon     | React.ReactNode? | Circle Color before input comes  | ''       |
+| PropertyName    | Type             | Description                                           | Default  |
+|-----------------|------------------|-------------------------------------------------------|----------|
+| emptyIcon       | React.ReactNode  | Component that Represents a blank space in the Numpad | required |
+| deleteIcon      | React.ReactNode  | Component that can delete input                       | required |
+| backgroundColor | string?          | Numpad background color                               | #dc2626  |
+| shuffleIcon     | React.ReactNode? | Component that can shuffle numpad                     | ''       |
 
 
 
