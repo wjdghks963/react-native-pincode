@@ -1,6 +1,6 @@
 {
   "name": "@wjdghks963/react-native-shuffle-pincode",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": false,
   "description": "PIN-CODE component for react-native",
   "main": "lib/commonjs/index",
