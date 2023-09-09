@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { CorrectPasswordContext, PasswordContext } from '../index';
+import { StyleSheet, View } from 'react-native';
 
 import Animated, {
   withSpring,
@@ -8,22 +7,26 @@ import Animated, {
   useSharedValue,
   withRepeat,
 } from 'react-native-reanimated';
+import { CorrectPasswordContext, PasswordContext } from 'react-native-pin';
 
 /**
  *
- * @param title - Title Text
+ * @param title - Title Text Component
  * @param filledColor - Filled Color
  * @param emptyColor - Empty Color
+ * @param badgeSize - Size of Badges
  * @returns
  */
 export default function PINContent({
   title,
   filledColor,
   emptyColor,
+  badgeSize,
 }: {
-  title?: string;
+  title?: React.ReactNode;
   filledColor?: string;
   emptyColor?: string;
+  badgeSize?: number;
 }) {
   const [password, _] = useContext(PasswordContext);
   const { correctPin, afterClear } = useContext(CorrectPasswordContext);
@@ -69,11 +72,7 @@ export default function PINContent({
 
   return (
     <View style={style.container}>
-      {title ? (
-        <View>
-          <Text>{title}</Text>
-        </View>
-      ) : null}
+      {title ? <View>{title}</View> : null}
       <Animated.View
         style={[badgeContainer(password.length).container, customSpringStyles]}
       >
@@ -83,7 +82,7 @@ export default function PINContent({
               key={index}
               style={[
                 badgeColor(filledColor, emptyColor).emptyBadge,
-                style.badge,
+                badgeStyle(badgeSize).badge,
               ]}
             />
           ) : (
@@ -91,7 +90,7 @@ export default function PINContent({
               key={index}
               style={[
                 badgeColor(filledColor, emptyColor).filledBadge,
-                style.badge,
+                badgeStyle(badgeSize).badge,
               ]}
             />
           );
@@ -109,10 +108,6 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     gap: 15,
-  },
-  badge: {
-    flex: 0.08,
-    borderRadius: 100,
   },
 });
 
@@ -135,5 +130,14 @@ const badgeColor = (filledColor?: string, emptyColor?: string) =>
     },
     emptyBadge: {
       backgroundColor: emptyColor ? emptyColor : '#fca5a5',
+    },
+  });
+
+const badgeStyle = (size?: number) =>
+  StyleSheet.create({
+    badge: {
+      width: size ?? 23,
+      height: size ?? 23,
+      borderRadius: 100,
     },
   });
